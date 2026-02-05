@@ -2,201 +2,238 @@
 
 ## **Kurnur (BORI) Dam, Solapur District, Maharashtra**
 
+<p align="center">
+  <img src="https://img.shields.io/badge/Domain-Dam%20Safety-red" />
+  <img src="https://img.shields.io/badge/Domain-Hydrology-blue" />
+  <img src="https://img.shields.io/badge/Analysis-Dam%20Break%20%26%20Hydrographs-orange" />
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/Matplotlib-11557C?logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/Plotly-3F4F75?logo=plotly&logoColor=white" />
+  <img src="https://img.shields.io/badge/Pandas-150458?logo=pandas&logoColor=white" />
+  <img src="https://img.shields.io/badge/Jupyter-F37626?logo=jupyter&logoColor=white" />
+</p>
+
 ---
 
-## 1. Introduction
+## 📌 Introduction
 
-This repository documents the **hydraulic time‑series analysis and visualization** of dam breach and release scenarios for **Kurnur (BORI) Dam**, Maharashtra.
+This repository documents the **hydraulic time-series analysis and visualization** of **dam breach and controlled release scenarios** for **Kurnur (BORI) Dam**, Maharashtra.
 
-The work is intended to support:
+The work focuses on **engineering-grade hydrograph plotting** using Python for **accuracy, clarity, traceability, and reproducibility**, and is intended to support:
 
-* Dam Break Analysis (DBA)
-* Emergency Action Plan (EAP) preparation
-* Technical review by CWC / SDSO / State Dam Safety authorities
+* **Dam Break Analysis (DBA)**
+* **Emergency Action Plan (EAP) preparation**
+* **Technical review by CWC / SDSO / State Dam Safety Authorities**
+* **Academic and professional hydraulic analysis**
 
-The focus of this repository is **engineering‑grade hydrograph plotting** using Python, ensuring accuracy, clarity, and reproducibility.
+⚠️ *This repository performs post-processing and visualization only; it does not simulate breach hydraulics.*
 
 ---
 
-## 2. Study Area
+## 📍 Study Area
 
 * **Dam Name:** Kurnur (BORI) Dam
 * **District:** Solapur
 * **State:** Maharashtra, India
-* **Type of Analysis:** Dam breach & controlled release hydrographs
+* **Type of Study:**
+
+  * Dam breach hydrographs
+  * Large controlled release hydrographs
 
 ---
 
-## 3. Scenarios Analyzed
+## 🔍 Scenarios Analyzed
 
-The following scenarios are covered:
+Each scenario is processed **independently** to maintain analytical clarity and regulatory traceability.
 
-1. **Piping Failure**
+### 1️⃣ Piping Failure
 
-   * Progressive internal erosion leading to breach formation
+* Progressive internal erosion
+* Breach formation due to piping
+* Time-varying discharge, elevation, breach parameters
 
-2. **Overtopping Failure**
+### 2️⃣ Overtopping Failure
 
-   * Breach initiation due to reservoir level exceeding dam crest
+* Reservoir level exceeding dam crest
+* Rapid breach initiation
+* Peak breach discharge analysis
 
-3. **Large Controlled Release**
+### 3️⃣ Large Controlled Release
 
-   * Non‑failure operational release through gates/spillway
-
-Each scenario is processed independently to avoid analytical ambiguity.
-
----
-
-## 4. Data
-
-### 4.1 Data Source
-
-* Time‑series outputs exported from **hydraulic / dam‑break modeling software** (e.g., HEC‑RAS)
-* Data stored in **Excel (.xlsx)** format
-
-### 4.2 Data Files
-
-Typical datasets include:
-
-* Headwater Elevation (m)
-* Tailwater Elevation (m)
-* Total Discharge (m³/s)
-* Breach Discharge (m³/s) *(where applicable)*
-* Breach Width (m) *(separate analysis)*
-* Breach Velocity (m/s) *(separate analysis)*
-
-Each Excel file represents **one scenario only** to preserve traceability.
-
-### 4.3 Time Resolution
-
-* Uniform time‑step (typically 5 minutes)
-* Time zone as provided by the hydraulic model output
+* Non-failure operational release
+* Spillway / gate-controlled discharge
+* Comparison with breach scenarios
 
 ---
 
-## 5. Tools & Software
+## 🧭 Interactive Navigation
 
-The analysis is carried out using open‑source scientific tools:
+### 📂 Data
 
-* **Python 3.x**
-* **Pandas** – time‑series data handling
-* **Matplotlib** – high‑resolution static engineering plots
-* **Plotly** – interactive technical visualizations
+➡️ **[Data Folder](./data/)**
+➡️ **[Data Description](./data/Data_Description.md)**
+
+### 📘 Methodology
+
+➡️ **[Methods Folder](./methods/)**
+➡️ **[Methodology & Assumptions](./methods/Methodology_and_Assumptions.md)**
+
+### 📊 Scripts (Core Analysis)
+
+➡️ **[Scripts Folder](./scripts/)**
+
+* Piping breach hydrographs
+* Overtopping breach hydrographs
+* Large controlled release plots
+* Breach width & velocity vs time
+
+### 📈 Outputs
+
+➡️ **[Outputs Folder](./outputs/)**
+➡️ **[Output Summary](./outputs/README.md)**
+
+### 📚 References
+
+➡️ **[References Folder](./references/)**
+➡️ **[Reference List](./references/References.md)**
+
+---
+
+## 📂 Repository File Structure
+
+```text
+.
+├── data
+│   ├── Large_Controlled_Release_Hydrograph.xlsx
+│   ├── Overtopping breach hydrograph.xlsx
+│   ├── Piping Breach hydrograph.xlsx
+│   ├── Overtopping_Piping_Breach_Parameters.xlsx
+│   ├── Data_Description.md
+│   └── README.md
+│
+├── methods
+│   ├── Methodology_and_Assumptions.md
+│   └── README.md
+│
+├── scripts
+│   ├── Large_controlled_Release_Bori.ipynb
+│   ├── Overtopping_breach_Plots_Bori_Dam_.ipynb
+│   ├── Piping_breach_graphs_BORI_DAM.ipynb
+│   ├── BORI_breach_width_Velovity_time.ipynb
+│   └── README.md
+│
+├── outputs
+│   ├── LCR_BORI_Release.png
+│   ├── OVTP-BORI-Breach.png
+│   ├── PIPG-BORI-Breach.png
+│   └── README.md
+│
+├── references
+│   ├── References.md
+│   └── README.md
+│
+├── tools
+│   └── README.md
+│
+├── .gitignore
+├── LICENSE
+└── README.md
+```
+
+---
+
+## 🛠️ Tools & Software Stack
+
+* **Python 3.x** – core computation
+* **Pandas** – time-series handling
+* **Matplotlib** – static, publication-quality engineering plots
+* **Plotly** – interactive hydrographs
 * **Jupyter Notebook / Google Colab** – execution environment
 
 ---
 
-## 6. Methodology
+## 🧪 Methodology (Summary)
 
-### 6.1 Data Processing
+### Data Processing
 
-1. Import Excel time‑series data
-2. Parse date‑time into Python datetime format
-3. Verify units and column consistency
-4. No smoothing or artificial modification applied
+* Import Excel time-series outputs from hydraulic models (e.g., HEC-RAS)
+* Parse date-time fields
+* Verify units and column consistency
+* No smoothing, interpolation, or artificial modification
 
-### 6.2 Plotting Philosophy
+### Plotting Philosophy
 
-* **Dual‑axis hydrographs**:
+* **Dual-axis hydrographs**
 
-  * Left Y‑axis → Elevation (m)
-  * Right Y‑axis → Discharge (m³/s)
+  * Left Y-axis → Elevation (m)
+  * Right Y-axis → Discharge (m³/s)
+* Consistent engineering color convention
+* Clean legends and axis labels for regulatory submission
 
-* **Consistent color convention**:
+### Scenario Isolation
 
-  * Headwater Elevation → Navy Blue
-  * Tailwater Elevation → Light Blue
-  * Total Discharge → Dark Green (dashed)
-
-* **Engineering‑readable formatting**:
-
-  * Clear axis labels
-  * Proper tick spacing
-  * One‑line legends
-
-### 6.3 Scenario Separation
-
-* Piping, overtopping, and controlled release plots are generated **independently**
-* Breach width and velocity are plotted in **separate dedicated graphs**
+* Piping, overtopping, and controlled release handled separately
+* Breach width and velocity plotted independently
 
 ---
 
-## 7. Outputs
+## 📤 Outputs
 
-For each scenario, the following outputs are produced:
+### Static Outputs (Matplotlib)
 
-### 7.1 Matplotlib Outputs (Static)
-
-* Publication‑quality PNG images
+* High-resolution PNG images
 * Suitable for:
 
   * DBA reports
   * Annexures
   * Regulatory submissions
 
-### 7.2 Plotly Outputs (Interactive)
+### Interactive Outputs (Plotly)
 
-* Interactive HTML graphs
-* Features:
-
-  * Zoom & pan
-  * Hover inspection of values
+* Zoom, pan, hover inspection
 * Suitable for:
 
-  * Technical reviews
+  * Technical review meetings
   * Presentations
 
-### 7.3 Output Files
+---
 
-* Combined hydrographs (Elevation + Discharge)
-* Separate plots for:
+## ⚠️ Limitations
 
-  * Breach width vs time
-  * Breach velocity vs time
+* Results depend entirely on hydraulic model outputs
+* No calibration or field validation included
+* Repository performs **post-processing only**
 
 ---
 
-## 8. Repository Usage (Beginner Friendly)
+## 📚 References
 
-1. Upload Excel input files
-2. Open the corresponding Jupyter Notebook
-3. Run cells sequentially
-4. Generated plots will appear inline and/or be saved as image files
-
-No prior GitHub or advanced Python experience is required.
+* Central Water Commission (CWC) – Guidelines for Dam Break Analysis
+* FEMA (2014) – Federal Guidelines for Dam Safety
+* USACE (2021) – HEC-RAS User Manual
+* ICOLD Bulletins on Dam Safety
 
 ---
 
-## 9. Limitations
-
-* Results depend entirely on input hydraulic model accuracy
-* No calibration or field validation is performed within this repository
-* Plots represent **post‑processing only**, not model simulation
-
----
-
-## 10. References
-
-1. Central Water Commission (CWC) – Guidelines for Dam Break Analysis
-2. FEMA (2014). *Federal Guidelines for Dam Safety – Dam Breach Analysis*
-3. USACE (2021). *HEC‑RAS User Manual*
-4. ICOLD Bulletins on Dam Safety and Breach Analysis
-
----
-
-## 11. Author
+## 👤 Author
 
 **Satwik Udupi**
-Agricultural Engineer | Hydrology & GIS
-Specialization:
+*Agricultural Engineer | Hydrology & GIS Specialization*
+
+**Expertise:**
 
 * Dam Break Analysis
-* HEC‑RAS 1D/2D
-* Hydraulic Modeling & Visualization
+* HEC-RAS 1D / 2D
+* Hydraulic Time-Series Visualization
 
 ---
 
-## 12. Disclaimer
+## ⚖️ Disclaimer
 
 This repository is intended **solely for technical, academic, and professional use**.
-The author assumes no liability for regulatory or design decisions made using this material.
+The author assumes **no liability** for regulatory, design, or operational decisions made using this material.
+
+
